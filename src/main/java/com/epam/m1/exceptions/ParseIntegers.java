@@ -18,7 +18,7 @@ public class ParseIntegers {
     public static void main(String[] args) {
         Iterator<String> words = WORDS.iterator();
         int sum = 0;
-        StringBuilder justWords = new StringBuilder();
+        String justWords = "";
         boolean firstWord = true;
 
         while (words.hasNext()) {
@@ -28,9 +28,9 @@ public class ParseIntegers {
                 sum += number;
             } catch (NumberFormatException e) {
                 if (!firstWord) {
-                    justWords.append(" ");
+                    justWords += " ";
                 }
-                justWords.append(next);
+                justWords += next;
                 firstWord = false;
             }
         }
